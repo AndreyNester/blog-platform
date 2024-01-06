@@ -14,6 +14,24 @@
       border: 1px solid #D9D9D9;
       border-radius: 6px;
 
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        h4{
+          margin: 5px 0;
+          font-size: 14px;
+          color: #262626;
+        }
+
+        input{
+          height: 40px;
+          font-size: 16px;
+        }
+      }
+
+
       .formDecorator__title{
         text-align: center;
         color: #262626;
@@ -23,6 +41,15 @@
         letter-spacing: 0.025em;
         font-size: 20px;
         margin-bottom: 21px;
+      }
+
+      .decorator__Btn{
+        height: 40px;
+      }
+
+      .decorator__info{
+        text-align: center;
+        color: #8C8C8C;
       }
     }
   }
