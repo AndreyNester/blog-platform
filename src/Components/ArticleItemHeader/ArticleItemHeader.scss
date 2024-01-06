@@ -1,0 +1,57 @@
+.articleItem{
+ 
+
+  header{
+    min-height: 70px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &.total{
+      padding: 10px 0;
+    }
+
+    .articleItem__info{
+      
+    }
+  
+    h2 {
+      color: #1890FF;
+      font-size: 20px;
+      max-width: 600px;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; 
+    }
+
+    .articleItem__tagList{
+      margin-top: 10px;
+      
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; 
+    }
+
+    p{
+      color: rgba($color: #000000, $alpha: 0.75);
+      line-height: 1.83;
+      font-size: 12px;
+
+      max-width: 600px;
+      max-height: 65px;
+      overflow-y: hidden;
+
+      overflow-wrap: anywhere;
+      text-overflow: ellipsis; 
+
+      &.total{
+         color: rgba($color: #000000, $alpha: 0.5);
+         margin-top: 15px;
+      }
+    }
+  }
+}
+

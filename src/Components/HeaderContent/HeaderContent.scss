@@ -1,0 +1,24 @@
+.header__content{
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: inherit;
+
+  h1{
+    a{
+      color:  black;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+  }
+  
+  .layout__header-btnGroup {
+  
+    button {
+      margin-left: 20px;
+    }
+  }
+}
+
+
