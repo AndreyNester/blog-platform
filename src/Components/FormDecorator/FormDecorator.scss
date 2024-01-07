@@ -1,3 +1,5 @@
+@import '../../commonStyles/varables.scss';
+
 .formDecorator{
   width:  100%;
   min-height: 100px;
@@ -21,18 +23,64 @@
 
         h4{
           margin: 5px 0;
-          font-size: 14px;
+          font-size: 16px;
           color: #262626;
-        }
-        span {
-          padding-top: 0;
-          padding-bottom: 0;
+          
         }
 
-        input{
-          height: 40px;
-          font-size: 16px;
+        label {
+
+          &.agreeField {
+            min-height: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color:  #595959;
+            line-height: 1.57;
+            
+
+            &>input {
+              width: 16px;
+              height: 22px;
+              margin: 0;
+            }
+
+          }
+
+          input:not([type='checkbox']){
+            height: 40px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #D9D9D9;
+            padding: 10px;
+            letter-spacing: 0.025rem;
+  
+  
+            &:focus{
+              outline: 1px solid $thirdColor;
+              border: none;
+              box-shadow: none;
+            }
+  
+            &.doNotValidates {
+              outline: 1px solid $errorColor;
+            }
+  
+            &+p{
+              color: $errorColor;
+              margin-top: 8px;
+              font-size: 14px;
+            }
+          }
         }
+
+        
+
+        
+
+        
       }
 
 
