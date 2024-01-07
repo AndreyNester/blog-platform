@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { Button, Checkbox, Divider, Input } from 'antd';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 import './FormRegistration.scss';
@@ -14,15 +15,19 @@ function FormRegistration() {
   const [emailValue, setEmailValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [repPasswordValue, setRepPasswordValue] = useState('');
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
-  const onSubmit = (e, data) => {
-    e.preventDefault();
-    // const { checkboxStatus, usernameValue, emailValue, passwordValue, repPasswordValue } = data;
+  const onSubmit = (data) => {
     console.log(data);
   };
+  console.log(register, errors);
 
   return (
-    <form action="" className="">
+    <form action="" onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="username">
         <h4>Username</h4>
         <Input
@@ -86,12 +91,7 @@ function FormRegistration() {
         I agree to the processing of my personal information
       </Checkbox>
 
-      <Button
-        type="primary"
-        htmlType="submit"
-        className="decorator__Btn"
-        onClick={(e) => onSubmit(e, { checkboxStatus, usernameValue, emailValue, passwordValue, repPasswordValue })}
-      >
+      <Button type="primary" htmlType="submit" className="decorator__Btn">
         Create
       </Button>
 
