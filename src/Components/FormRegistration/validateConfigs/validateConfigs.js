@@ -15,7 +15,7 @@ export const validateConfigEmail = () => ({
   pattern: {
     value:
       // eslint-disable-next-line no-useless-escape
-      /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u,
+      /^((([0-9a-z]{1}[-0-9a-z\.]{1,}[0-9a-z]{1})|([0-9а-я]{1}[-0-9а-я\.]{1,}[0-9а-я]{1}))@([-a-z]{1,}\.){1,2}[-a-z]{2,})$/u,
     message: 'please write correct Email address',
   },
 });
@@ -38,4 +38,8 @@ export const validateConfigRepeatPassword = (getPasswordValue) => ({
     const passwordValue = getPasswordValue('password');
     return value === passwordValue;
   },
+});
+
+export const validateConfigAgreeCheckbox = () => ({
+  required: true,
 });
