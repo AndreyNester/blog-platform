@@ -4,20 +4,19 @@
 import { classnameForInput } from '../../FormDecorator/utils/classnameForInput';
 import { validateConfigEmail } from '../validateConfigs/validateConfigs';
 
-function LabelSignInEmail(props) {
+function LabelEditProfileEmail(props) {
   const { errors, register } = props;
   return (
     <label>
       <h4>Email address</h4>
       <input
         type="email"
-        placeholder="Email address"
-        {...register('email', validateConfigEmail())}
-        className={classnameForInput(errors?.Email)}
+        {...register('editProfileEmail', validateConfigEmail())}
+        className={classnameForInput(errors?.editProfileEmail)}
       />
-      <p>{errors?.Email?.message}</p>
+      <p>{errors?.editProfileEmail?.message}</p>
     </label>
   );
 }
 
-export default LabelSignInEmail;
+export default LabelEditProfileEmail;

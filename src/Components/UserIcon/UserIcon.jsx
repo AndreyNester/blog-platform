@@ -25,7 +25,7 @@ function UserIcon(props) {
     <div className={classNamesOfUserIcon}>
       <div className="userIcon__info">
         <h3 className="userIcon__name">{username}</h3>
-        <div className="userIcon__date">{format(new Date(createdAt), 'MMMM dd, yyyy')}</div>
+        {createdAt && <div className="userIcon__date">{format(new Date(createdAt), 'MMMM dd, yyyy')}</div>}
       </div>
 
       <Avatar size="large" icon={<UserOutlined />} src={image} />

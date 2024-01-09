@@ -1,8 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Button } from 'antd';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line import/order
+import { fetchLoginUser } from '../../store/logIn/fetchLogIn';
 import LabelSignInEmail from './labels/LabelSignInEmail';
 import LabelSignInPassword from './labels/LabelSignInPassword';
 
@@ -16,9 +19,12 @@ function FormSignIn() {
     mode: 'onChange',
   });
 
+  const dispatch = useDispatch();
+
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(fetchLoginUser(data));
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <LabelSignInEmail register={register} errors={errors} />
