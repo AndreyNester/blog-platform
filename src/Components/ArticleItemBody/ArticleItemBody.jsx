@@ -6,7 +6,6 @@ function ArticleItemBody(props) {
   const {
     item: { body },
   } = props;
-  console.log(body);
   return (
     <div className="articleItemBody">
       <Markdown>{body}</Markdown>

@@ -7,7 +7,7 @@ import './SignIn.scss';
 
 function SignIn() {
   const signInLoading = useSelector((state) => state.reducers.logIn.loading);
-  console.log(useSelector((state) => state.reducers.logIn));
+  // console.log(useSelector((state) => state.reducers.logIn));
   return (
     <section className="signIn">
       <FormDecorator title="Sign In">

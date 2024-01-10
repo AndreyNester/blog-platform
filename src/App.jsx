@@ -7,7 +7,6 @@ import HeaderContent from './Components/HeaderContent/HeaderContent';
 import './commonStyles/baseStyles.scss';
 
 const { Header, Content } = Layout;
-
 const App = () => {
   return (
     <Layout className="layout__layout">

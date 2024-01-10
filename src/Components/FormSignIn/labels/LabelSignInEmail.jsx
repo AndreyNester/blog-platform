@@ -13,8 +13,9 @@ function LabelSignInEmail(props) {
         type="email"
         placeholder="Email address"
         {...register('email', validateConfigEmail())}
-        className={classnameForInput(errors?.Email)}
+        className={classnameForInput(errors?.email)}
       />
+
       <p>{errors?.Email?.message}</p>
     </label>
   );
