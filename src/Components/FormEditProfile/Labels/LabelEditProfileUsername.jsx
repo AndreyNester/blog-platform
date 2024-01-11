@@ -11,6 +11,7 @@ function LabelEditProfileUsername(props) {
       <h4>Username</h4>
       <input
         type="text"
+        placeholder="Username"
         {...register('editProfileUsername', validateConfigUsername())}
         className={classnameForInput(errors?.editProfileUsername)}
       />

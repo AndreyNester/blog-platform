@@ -1,5 +1,14 @@
 export const validateConfigUsername = () => ({
   required: 'required field',
+  minLength: {
+    value: 3,
+    message: 'minimum 3 characters',
+  },
+
+  maxLength: {
+    value: 40,
+    message: 'maximum 40 characters',
+  },
 });
 
 export const validateConfigEmail = () => ({

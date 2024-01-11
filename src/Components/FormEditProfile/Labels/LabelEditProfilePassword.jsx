@@ -11,6 +11,7 @@ function LabelEditProfilePassword(props) {
       <h4>New password</h4>
       <input
         type="password"
+        placeholder="New password"
         {...register('editProfilePassword', validateConfigPassword())}
         className={classnameForInput(errors?.editProfilePassword)}
       />

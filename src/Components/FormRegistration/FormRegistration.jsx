@@ -3,8 +3,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { Button, Divider } from 'antd';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line import/order
+import { fetchSignUp } from '../../store/signUp/fetchSignUp';
 // eslint-disable-next-line import/order
 import './FormRegistration.scss';
 import LabelRegCheckbox from './labels/LabelRegCheckbox';
@@ -23,8 +26,10 @@ function FormRegistration() {
     mode: 'onChange',
   });
 
+  const dispatch = useDispatch();
+
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(fetchSignUp(data));
   };
 
   return (

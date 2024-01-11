@@ -11,6 +11,7 @@ function LabelEditProfileEmail(props) {
       <h4>Email address</h4>
       <input
         type="email"
+        placeholder="Email address"
         {...register('editProfileEmail', validateConfigEmail())}
         className={classnameForInput(errors?.editProfileEmail)}
       />

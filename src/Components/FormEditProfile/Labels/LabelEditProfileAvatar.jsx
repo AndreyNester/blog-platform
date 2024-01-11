@@ -10,6 +10,7 @@ function LabelEditProfileAvatar(props) {
       <h4>Avatar image (url)</h4>
       <input
         type="url"
+        placeholder="Avatar image"
         {...register('editProfileAvatar', validateConfigAvatar())}
         className={classnameForInput(errors?.editProfileAvatar)}
       />

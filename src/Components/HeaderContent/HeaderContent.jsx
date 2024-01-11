@@ -5,13 +5,9 @@ import { actions } from '../../store/logIn/logIn.slice';
 import UserIcon from '../UserIcon/UserIcon';
 import './HeaderContent.scss';
 
-// 'https://opis-cdn.tinkoffjournal.ru/mercury/in-ca-py-ba-ra.dlcnmhdda7i5..jpg?preset=image_1280w'
-
 function HeaderContent() {
   const userData = useSelector((state) => state.reducers.logIn);
-  console.log(userData);
   const dispatch = useDispatch();
-  console.log(actions);
   return (
     <div className="header__content">
       <h1 className="layout__header-title">
@@ -24,14 +20,17 @@ function HeaderContent() {
           <button type="button" className="createArticleBtn">
             create article
           </button>
-          <UserIcon
-            item={{
-              author: {
-                username: userData.username,
-                image: userData.image,
-              },
-            }}
-          />
+          <Link to="/profile">
+            <UserIcon
+              item={{
+                author: {
+                  username: userData.username,
+                  image: userData.avatar,
+                },
+              }}
+            />
+          </Link>
+
           <button type="button" className="logOutBtn" onClick={() => dispatch(actions.logOut())}>
             Log Out
           </button>
