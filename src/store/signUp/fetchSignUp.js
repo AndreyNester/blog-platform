@@ -26,7 +26,7 @@ export const fetchSignUp = createAsyncThunk('signUpSlice/signUp', async function
 
   const response = await fetch('https://blog.kata.academy/api/users', options).then((answer) => {
     if (!answer.ok) {
-      if (answer.status === 422) throw new Error('invalid password or Email');
+      if (answer.status === 422) throw new Error('this name or address is already taken');
       throw new Error('some unexpected error from server');
     }
     return answer.json();

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
+import RequireAuth from '../../hoc/RequireAuth';
 import Article from '../../pages/article/Article';
 import Articles from '../../pages/articles/Articles';
 import EditProfile from '../../pages/editProfile/EditProfile';
@@ -15,7 +16,15 @@ function ContentContent() {
         <Route path="/article/:slug" element={<Article />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/profile" element={<EditProfile />} />
+
+        <Route
+          path="/profile"
+          element={
+            <RequireAuth>
+              <EditProfile />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </div>
   );
