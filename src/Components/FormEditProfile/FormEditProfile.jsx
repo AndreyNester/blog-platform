@@ -20,12 +20,11 @@ function FormEditProfile() {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.reducers.logIn.token);
   const errorsMessage = useSelector((state) => state.reducers.editProfile.errorMessage);
-  console.log(errorsMessage);
 
   const onSubmit = (data) => {
-    console.log(data);
     dispatch(fetchEditProfile({ ...data, token }));
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <LabelEditProfileUsername register={register} errors={errors} />

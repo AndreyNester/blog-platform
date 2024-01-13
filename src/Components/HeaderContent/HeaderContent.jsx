@@ -17,9 +17,9 @@ function HeaderContent() {
       </h1>
       {userData.logined ? (
         <div className="layout__header-btnGroup_logined">
-          <button type="button" className="createArticleBtn">
-            create article
-          </button>
+          <Link to="/new-article" className="createArticleBtn">
+            <span>Create article</span>
+          </Link>
           <Link to="/profile">
             <UserIcon
               item={{

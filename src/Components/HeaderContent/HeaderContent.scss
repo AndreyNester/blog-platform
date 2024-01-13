@@ -54,6 +54,9 @@
     gap: 20px;
     
     .createArticleBtn{
+      position: relative;
+      display: block;
+      font-size: 14px;
       width: 112px;
       height: 31.1px;
       border: 1px solid $firtsAccentColor; 
@@ -63,6 +66,16 @@
       background-color: inherit;
       transition-duration: 0.1s;
       cursor: pointer;
+
+      span{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       &:hover {
         background-color: rgba($color: grey, $alpha: 0.1);
