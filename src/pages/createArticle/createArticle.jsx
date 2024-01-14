@@ -6,16 +6,19 @@ import FormDecorator from '../../Components/FormDecorator/FormDecorator';
 import './createArticle.scss';
 
 function CreateArticle() {
-  const createArticleLoading = useSelector((state) => state.reducers.createArticle.loading);
+  const loading = useSelector((state) => state.reducers.createArticle.loading);
+  const successReq = useSelector((state) => state.reducers.createArticle.successReq);
+  const errorReq = useSelector((state) => state.reducers.createArticle.errorReq);
+
   return (
     <section>
       <FormDecorator className="createArticle" title="Create new article">
-        {createArticleLoading ? (
+        {loading ? (
           <Spin tip="Loading" size="large">
-            <FormCreateArticle />
+            <FormCreateArticle successReq={successReq} errorReq={errorReq} />
           </Spin>
         ) : (
-          <FormCreateArticle />
+          <FormCreateArticle successReq={successReq} errorReq={errorReq} />
         )}
       </FormDecorator>
     </section>

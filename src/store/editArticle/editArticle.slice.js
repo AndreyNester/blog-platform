@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchCreateArticle } from './fetchCreateArticle';
+import { fetchEditArticle } from './fetchEditArticle';
 
 const initialState = {
   loading: false,
@@ -9,7 +9,7 @@ const initialState = {
   successReq: false,
 };
 
-const createArticle = createSlice({
+const editArticle = createSlice({
   name: 'createArticle',
   initialState,
   reducers: {
@@ -22,15 +22,15 @@ const createArticle = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCreateArticle.pending, (state) => {
+      .addCase(fetchEditArticle.pending, (state) => {
         state.loading = true;
         state.successReq = false;
       })
-      .addCase(fetchCreateArticle.fulfilled, (state) => {
+      .addCase(fetchEditArticle.fulfilled, (state) => {
         state.loading = false;
         state.successReq = true;
       })
-      .addCase(fetchCreateArticle.rejected, (state, action) => {
+      .addCase(fetchEditArticle.rejected, (state, action) => {
         state.loading = false;
         state.errorReq = true;
         console.log(action);
@@ -38,4 +38,4 @@ const createArticle = createSlice({
   },
 });
 
-export const { actions, reducer } = createArticle;
+export const { actions, reducer } = editArticle;

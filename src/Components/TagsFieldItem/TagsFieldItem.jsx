@@ -7,11 +7,12 @@ import { validateConfigTag } from '../FormCreateArticle/validateConfigs/validate
 import { classnameForInput } from '../FormDecorator/utils/classnameForInput';
 
 function TagsFieldItem(props) {
-  const { item, register, errors, index, append, remove } = props;
+  const { register, errors, index, append, remove, data } = props;
   return (
-    <li key={item.id}>
+    <li>
       <label>
         <input
+          defaultValue={data}
           {...register(`tags.${index}.tag`, validateConfigTag())}
           className={classnameForInput(errors?.tags?.[index])}
         />

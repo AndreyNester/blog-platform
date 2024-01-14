@@ -9,8 +9,7 @@ import './TagsField.scss';
 
 function TagsField(props) {
   // eslint-disable-next-line no-unused-vars
-  const { register, errors, control } = props;
-
+  const { register, errors, control, item } = props;
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'tags',
@@ -18,15 +17,15 @@ function TagsField(props) {
 
   return fields.length ? (
     <ul className="createArticle__tagList">
-      {fields.map((item, index) => (
+      {fields.map((el, index) => (
         <TagsFieldItem
-          key={item.id}
-          item={item}
+          key={el.id}
           register={register}
           errors={errors}
           index={index}
           remove={remove}
           append={append}
+          data={el.item}
         />
       ))}
     </ul>

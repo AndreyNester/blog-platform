@@ -5,12 +5,12 @@ import { classnameForInput } from '../../FormDecorator/utils/classnameForInput';
 import { validateConfigText } from '../validateConfigs/validateConfigTitle';
 
 function LabelCreateArticleText(props) {
-  const { errors, register } = props;
+  const { errors, register, item } = props;
   return (
     <label>
       <h4>Text</h4>
       <textarea
-        // type="text"
+        defaultValue={item?.body}
         placeholder="Text"
         id="textarea"
         {...register('editProfileText', validateConfigText())}

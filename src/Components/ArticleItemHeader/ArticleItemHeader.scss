@@ -15,17 +15,42 @@
 
       .userInfo{
         height: 107px;
+        width: 180px;
         display: flex;
         flex-direction:column ;
         justify-content: space-between;
-
+        align-items: flex-end;
         &.isMyArticle{
           .btnGroup{
             display: flex;
             gap: 12px;
+            width: 100%;
+
+            &>*{
+              flex-grow: 1;
+            }
+
             .edit{
+              height: 40px;
+              width: 65px;
+              border-radius: 5px;
+              
               border: 1px solid $firtsAccentColor;
               color: $firtsAccentColor;
+              text-align: center;
+              position: relative;
+
+              span{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+            button.delete{
+              padding: 0;
+              height: 40px;
+              width: 70px;
             }
           }
         }

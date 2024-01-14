@@ -4,6 +4,7 @@ import RequireAuth from '../../hoc/RequireAuth';
 import Article from '../../pages/article/Article';
 import Articles from '../../pages/articles/Articles';
 import CreateArticle from '../../pages/createArticle/createArticle';
+import EditArticle from '../../pages/editArticle/EditArticle';
 import EditProfile from '../../pages/editProfile/EditProfile';
 import SignIn from '../../pages/signIn/SignIn';
 import SignUp from '../../pages/signUp/signUp';
@@ -17,6 +18,15 @@ function ContentContent() {
         <Route path="/article/:slug" element={<Article />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
+
+        <Route
+          path="/articles/:slug/edit"
+          element={
+            <RequireAuth>
+              <EditArticle />
+            </RequireAuth>
+          }
+        />
 
         <Route
           path="/new-article"
