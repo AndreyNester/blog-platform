@@ -11,5 +11,5 @@ export const validateConfigText = () => ({
 });
 
 export const validateConfigTag = () => ({
-  required: 'fill input or delete them',
+  required: 'fill input or delete it',
 });

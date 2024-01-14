@@ -13,7 +13,7 @@ function TagsField(props) {
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: 'test',
+    name: 'tags',
   });
 
   return fields.length ? (

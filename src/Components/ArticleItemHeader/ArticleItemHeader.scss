@@ -1,6 +1,7 @@
+@import '../../commonStyles/varables.scss';
+
 .articleItem{
  
-
   header{
     min-height: 70px;
     padding: 10px;
@@ -10,11 +11,45 @@
 
     &.total{
       padding: 10px 0;
+
+
+      .userInfo{
+        height: 107px;
+        display: flex;
+        flex-direction:column ;
+        justify-content: space-between;
+
+        &.isMyArticle{
+          .btnGroup{
+            display: flex;
+            gap: 12px;
+            .edit{
+              border: 1px solid $firtsAccentColor;
+              color: $firtsAccentColor;
+            }
+          }
+        }
+  
+
+      }
+    }
+
+    .userInfo{
+      height: 107px;
+      display: flex;
+      flex-direction:column ;
+      justify-content: space-between;
+
+
+      .btnGroup{
+        display: none;
+      }
     }
 
     .articleItem__info{
       
     }
+
   
     h2 {
       color: #1890FF;

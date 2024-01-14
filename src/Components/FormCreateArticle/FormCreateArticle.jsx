@@ -1,6 +1,8 @@
 import { Button } from 'antd';
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { fetchCreateArticle } from '../../store/createArticle/fetchCreateArticle';
 // eslint-disable-next-line import/order
 import TagsField from '../TagsField/TagsField';
 import LabelCreateArticleText from './Labels/LabelCreateArticleText';
@@ -8,6 +10,7 @@ import LabelCreateArticleTitle from './Labels/LabelCreateArticleTitle';
 import LabelCreaterArticleShortDescription from './Labels/LabelCreaterArticleShortDescription';
 
 function FormCreateArticle() {
+  const token = useSelector((state) => state.reducers.logIn.token);
   const {
     register,
     formState: { errors },
@@ -17,8 +20,11 @@ function FormCreateArticle() {
     mode: 'onChange',
   });
 
+  const dispatch = useDispatch();
+
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(fetchCreateArticle({ ...data, token }));
   };
 
   return (

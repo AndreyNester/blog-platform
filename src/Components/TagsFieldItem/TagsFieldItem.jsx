@@ -12,8 +12,8 @@ function TagsFieldItem(props) {
     <li key={item.id}>
       <label>
         <input
-          {...register(`test.${index}.tag`, validateConfigTag())}
-          className={classnameForInput(errors?.test?.[index])}
+          {...register(`tags.${index}.tag`, validateConfigTag())}
+          className={classnameForInput(errors?.tags?.[index])}
         />
         <Button type="primary" className="createArticle__deleteBtn" danger ghost onClick={() => remove(index)}>
           Delete
@@ -22,7 +22,7 @@ function TagsFieldItem(props) {
           Add tag
         </Button>
       </label>
-      {errors?.test?.[index] ? <p className="errorMessage">{errors.test?.[index].tag.message}</p> : null}
+      {errors?.tags?.[index] ? <p className="errorMessage">{errors.tags?.[index].tag.message}</p> : null}
     </li>
   );
 }
