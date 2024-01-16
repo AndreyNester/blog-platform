@@ -13,9 +13,10 @@ function Articles() {
   const articlesLoaded = useSelector((state) => state.reducers.articles.loaded);
   const articlesTotalCount = useSelector((state) => state.reducers.articles.totalArticles);
   const currentPage = useSelector((state) => state.reducers.articles.currentPage);
+  const token = useSelector((state) => state.reducers.logIn.token);
 
   useEffect(() => {
-    dispatch(fetchArticles({ number: currentPage * 5 }));
+    dispatch(fetchArticles({ number: currentPage * 5, token }));
   }, [currentPage]);
 
   return articlesLoaded ? (

@@ -20,6 +20,9 @@
         flex-direction:column ;
         justify-content: space-between;
         align-items: flex-end;
+
+
+
         &.isMyArticle{
           .btnGroup{
             display: flex;
@@ -72,6 +75,13 @@
     }
 
     .articleItem__info{
+
+      .articleItem__titleField{
+        display: flex;
+        gap: 10px;
+
+        
+      }
       
     }
 

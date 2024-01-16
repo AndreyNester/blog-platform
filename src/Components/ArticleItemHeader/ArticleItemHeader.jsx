@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Likes from '../Likes/Likes';
 import TagList from '../TagList/TagList';
 import UserIcon from '../UserIcon/UserIcon';
 import './ArticleItemHeader.scss';
@@ -29,11 +30,14 @@ function ArticleItemHeader(props) {
     console.log('not delete article');
     message.error('Click on No');
   };
-
   return (
     <header className={classnameForFullArticle}>
       <div className="articleItem__info">
-        <h2>{item.title}</h2>
+        <div className="articleItem__titleField">
+          <h2>{item.title}</h2>
+          <Likes item={item} total={total} />
+        </div>
+
         <TagList tagList={item.tagList} className="articleItem__tagList" />
         <p className={classnameForFullArticle}>{item.description}</p>
       </div>

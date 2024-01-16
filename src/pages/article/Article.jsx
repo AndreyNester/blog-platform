@@ -15,9 +15,9 @@ function Article() {
     loaded,
     article: { article },
   } = useSelector((state) => state.reducers.article);
-
+  const token = useSelector((state) => state.reducers.logIn.token);
   useEffect(() => {
-    dispatch(fetchArticle({ slug }));
+    dispatch(fetchArticle({ slug, token }));
   }, []);
 
   return loaded ? (
