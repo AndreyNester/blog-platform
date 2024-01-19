@@ -11,6 +11,11 @@ const initialState = {
 const editProfile = createSlice({
   name: 'signUp',
   initialState,
+  reducers: {
+    resetError: (state) => {
+      state.errorMessage = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchSignUp.pending, (state) => {

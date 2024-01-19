@@ -1,7 +1,7 @@
 /* eslint-disable import/order */
-import { Button } from 'antd';
+import { Alert, Button } from 'antd';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { fetchEditProfile } from '../../store/editProfile/fetchEditProfile';
 import LabelEditProfileAvatar from './Labels/LabelEditProfileAvatar';
@@ -9,7 +9,8 @@ import LabelEditProfileEmail from './Labels/LabelEditProfileEmail';
 import LabelEditProfilePassword from './Labels/LabelEditProfilePassword';
 import LabelEditProfileUsername from './Labels/LabelEditProfileUsername';
 
-function FormEditProfile() {
+function FormEditProfile(props) {
+  const { errorsMessage, successMessage, token } = props;
   const {
     register,
     formState: { errors },
@@ -18,8 +19,6 @@ function FormEditProfile() {
     mode: 'onChange',
   });
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.reducers.logIn.token);
-  const errorsMessage = useSelector((state) => state.reducers.editProfile.errorMessage);
 
   const onSubmit = (data) => {
     dispatch(fetchEditProfile({ ...data, token }));
@@ -27,11 +26,13 @@ function FormEditProfile() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      {successMessage ? <Alert message="Profile data successfully updated" type="success" /> : null}
+      {errorsMessage ? <Alert message={errorsMessage} type="error" /> : null}
+
       <LabelEditProfileUsername register={register} errors={errors} />
       <LabelEditProfileEmail register={register} errors={errors} />
       <LabelEditProfilePassword register={register} errors={errors} />
       <LabelEditProfileAvatar register={register} errors={errors} />
-      {errorsMessage ? <p className="errorMessage">{errorsMessage}</p> : null}
 
       <Button type="primary" htmlType="submit" className="decorator__Btn">
         Save

@@ -34,6 +34,9 @@ const loginedUser = createSlice({
       state.email = null;
       state.errorMessage = null;
     },
+    resetError: (state) => {
+      state.errorMessage = null;
+    },
   },
   extraReducers: (builder) => {
     builder

@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Button } from 'antd';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/order
 import { fetchLoginUser } from '../../store/logIn/fetchLogIn';
@@ -11,7 +10,8 @@ import LabelSignInEmail from './labels/LabelSignInEmail';
 import LabelSignInPassword from './labels/LabelSignInPassword';
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
-function FormSignIn() {
+function FormSignIn(props) {
+  const { errorMessage } = props;
   const {
     register,
     formState: { errors },
@@ -19,22 +19,12 @@ function FormSignIn() {
   } = useForm({
     mode: 'onChange',
   });
-  const errorMessage = useSelector((state) => state.reducers.logIn.errorMessage);
-  const logined = useSelector((state) => state.reducers.logIn.logined);
 
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     dispatch(fetchLoginUser(data));
   };
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (logined) {
-      navigate('/', { replace: true });
-    }
-  }, [logined]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

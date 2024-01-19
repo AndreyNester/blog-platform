@@ -2,10 +2,9 @@
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { Button, Divider } from 'antd';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/order
 import { fetchSignUp } from '../../store/signUp/fetchSignUp';
@@ -17,7 +16,8 @@ import LabelRegPassword from './labels/LabelRegPassword';
 import LabelRepeatPassword from './labels/LabelRegRepeatPassword';
 import LabelRegUsername from './labels/LabelRegUsername';
 
-function FormRegistration() {
+function FormRegistration(props) {
+  const { errorMessage } = props;
   const {
     register,
     getValues,
@@ -28,18 +28,11 @@ function FormRegistration() {
   });
 
   const dispatch = useDispatch();
-  const errorMessage = useSelector((state) => state.reducers.signUp.errorMessage);
-  const logined = useSelector((state) => state.reducers.logIn.logined);
-  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     dispatch(fetchSignUp(data));
   };
-  useEffect(() => {
-    if (logined) {
-      navigate('/', { replace: true });
-    }
-  }, [logined]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <LabelRegUsername register={register} errors={errors} />
