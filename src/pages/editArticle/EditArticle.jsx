@@ -1,4 +1,5 @@
 import { Spin } from 'antd';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom';
 
@@ -9,9 +10,15 @@ import './EditArticle.scss';
 function EditArticle() {
   const FormEditArticle = FormCreateArticle; // Меняем название компонента для удобства
   const params = useParams();
-  const loading = useSelector((state) => state.reducers.editArticle.loading);
+  const editArticleLoading = useSelector((state) => state.reducers.editArticle.loading);
   const successReq = useSelector((state) => state.reducers.editArticle.successReq);
   const errorReq = useSelector((state) => state.reducers.editArticle.errorReq);
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(editArticleLoading);
+  }, [editArticleLoading]);
 
   const {
     state: { item },
@@ -20,13 +27,9 @@ function EditArticle() {
   return (
     <section className="editArticle">
       <FormDecorator className="createArticle" title="Edit article">
-        {loading ? (
-          <Spin tip="Loading" size="large">
-            <FormEditArticle item={item} params={params} successReq={successReq} errorReq={errorReq} />
-          </Spin>
-        ) : (
-          <FormEditArticle item={item} params={params} successReq={successReq} />
-        )}
+        <Spin tip="Loading" size="large" spinning={loading}>
+          <FormEditArticle item={item} params={params} successReq={successReq} errorReq={errorReq} />
+        </Spin>
       </FormDecorator>
     </section>
   );
