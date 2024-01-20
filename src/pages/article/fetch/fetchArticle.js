@@ -8,13 +8,7 @@ export const fetchArticle = async (slug, token) => {
     },
   };
 
-  const responce = await fetch(`https://blog.kata.academy/api/articles/${slug}`, options).then((answer) => {
-    if (answer.ok) {
-      return answer.json();
-    }
-    console.log('err');
-    return answer;
-  });
+  const responce = await fetch(`https://blog.kata.academy/api/articles/${slug}`, options);
 
   return {
     responce,

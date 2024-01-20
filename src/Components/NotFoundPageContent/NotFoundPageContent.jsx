@@ -1,5 +1,5 @@
 function NotFoundPageContent() {
-  return <div className="NotFoundPageContent">not found</div>;
+  return null;
 }
 
 export default NotFoundPageContent;

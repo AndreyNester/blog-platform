@@ -3,14 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchEditArticle = createAsyncThunk('editArticleSlice/editArticle', async function (action) {
   const { editProfileShortDescription, editProfileText, editProfileTitle, tags, token, params } = action;
-  console.log(
-    editProfileShortDescription,
-    editProfileText,
-    editProfileTitle,
-    token,
-    params.slug,
-    tags.map((el) => el.tag)
-  );
 
   const body = {
     article: {

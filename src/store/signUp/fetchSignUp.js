@@ -4,8 +4,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchSignUp = createAsyncThunk('signUpSlice/signUp', async function (action) {
   const { username, email, password } = action;
 
-  console.log(action);
-
   const body = {
     user: {
       email,

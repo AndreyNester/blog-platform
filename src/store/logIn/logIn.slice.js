@@ -42,14 +42,11 @@ const loginedUser = createSlice({
     builder
       .addCase(fetchLoginUser.pending, (state) => {
         state.loading = true;
-        console.log('fetching..');
       })
       .addCase(fetchLoginUser.fulfilled, (state, action) => {
         const {
           user: { username, email, token, image },
         } = action.payload.response;
-
-        console.log(action);
 
         sessionStorage.setItem('username', username);
         sessionStorage.setItem('token', token);
@@ -66,8 +63,6 @@ const loginedUser = createSlice({
       })
       .addCase(fetchLoginUser.rejected, (state, action) => {
         state.loading = false;
-        console.log('error');
-        console.log(action.error);
         state.errorMessage = action.error.message;
       })
       .addCase(fetchEditProfile.fulfilled, (state, action) => {
@@ -90,8 +85,6 @@ const loginedUser = createSlice({
         const {
           user: { username, email, token, image },
         } = action.payload.response;
-
-        console.log(username, email, token, image);
 
         state.logined = true;
         state.username = username;
