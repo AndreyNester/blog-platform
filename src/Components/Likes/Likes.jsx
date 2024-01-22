@@ -14,7 +14,6 @@ import likeIconLiked from './img/likeIcon_liked.svg';
 
 function Likes(props) {
   const {
-    total,
     item: { favoritesCount, favorited, slug },
   } = props;
 
@@ -87,7 +86,7 @@ function Likes(props) {
           <LoadingOutlined />
         ) : (
           <>
-            <button disabled={!total} onClick={() => like()}>
+            <button onClick={() => like()}>
               <img src={likeIconLiked} alt="like icon" />
             </button>
             <p className="likesCount">{state.favoritesCount}</p>
@@ -97,7 +96,7 @@ function Likes(props) {
         <LoadingOutlined />
       ) : (
         <>
-          <button disabled={!total} onClick={() => like()}>
+          <button onClick={() => like()}>
             <img src={likeIcon} alt="like icon" />
           </button>
           <p className="likesCount">{state.favoritesCount}</p>

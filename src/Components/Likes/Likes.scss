@@ -8,9 +8,7 @@
     border: none;
     display: flex;
     align-items: center;
-    
-    &:disabled{
-      cursor: pointer;
-    }
+    cursor: pointer;
+  
   }
 }

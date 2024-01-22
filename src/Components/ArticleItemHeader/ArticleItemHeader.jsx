@@ -26,11 +26,9 @@ function ArticleItemHeader(props) {
   });
 
   const confirm = async () => {
-    console.log('delete article');
     setDeleteProcessing(true);
     await fetchDeleteArticle(token, item.slug)
       .then((responce) => {
-        console.log(responce);
         if (responce.ok) {
           navigate('/');
           message.success('article successfully deleted');
@@ -39,7 +37,6 @@ function ArticleItemHeader(props) {
         }
       })
       .catch(() => {
-        console.log('not delete article');
         message.error('Click on No');
       });
   };
@@ -48,7 +45,10 @@ function ArticleItemHeader(props) {
     <header className={classnameForFullArticle}>
       <div className="articleItem__info">
         <div className="articleItem__titleField">
-          <h2>{item.title}</h2>
+          <Link to={`/article/${item.slug}`}>
+            <h2>{item.title}</h2>
+          </Link>
+
           <Likes item={item} total={total} />
         </div>
 

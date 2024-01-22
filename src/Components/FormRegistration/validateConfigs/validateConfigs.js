@@ -2,11 +2,11 @@ export const validateConfigUsername = () => ({
   required: 'required field',
   minLength: {
     value: 3,
-    message: 'Your password needs to be at least 3 characters',
+    message: 'Your username needs to be at least 3 characters',
   },
   maxLength: {
     value: 20,
-    message: 'Your password must be a maximum of 20 characters',
+    message: 'Your username must be a maximum of 20 characters',
   },
 });
 
