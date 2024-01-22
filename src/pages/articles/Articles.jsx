@@ -20,8 +20,8 @@ function Articles() {
   }, [currentPage]);
 
   return articlesLoaded ? (
-    <div className="articlesList__container">
-      <ul className="articlesList">
+    <section className="articlesList">
+      <ul className="articlesList__list">
         {articlesList.map((item) => (
           <ArticleItem item={item} key={item.slug} />
         ))}
@@ -34,7 +34,7 @@ function Articles() {
         className="articlesList__pagination"
         onChange={(num) => dispatch(actions.onChangePage({ num }))}
       />
-    </div>
+    </section>
   ) : (
     <Spin size="large" className="articlesList__spinner" />
   );

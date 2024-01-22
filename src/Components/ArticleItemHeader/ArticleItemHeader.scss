@@ -13,7 +13,7 @@
       padding: 10px 0;
 
 
-      .userInfo{
+      .articleItem__userInfo{
         height: 107px;
         width: 180px;
         display: flex;
@@ -24,7 +24,7 @@
 
 
         &.isMyArticle{
-          .btnGroup{
+          .articleItem__btnGroup{
             display: flex;
             gap: 12px;
             width: 100%;
@@ -62,14 +62,14 @@
       }
     }
 
-    .userInfo{
+    .articleItem__userInfo{
       height: 107px;
       display: flex;
       flex-direction:column ;
       justify-content: space-between;
 
 
-      .btnGroup{
+      .articleItem__btnGroup{
         display: none;
       }
     }

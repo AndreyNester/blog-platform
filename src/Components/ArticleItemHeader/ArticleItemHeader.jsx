@@ -21,7 +21,7 @@ function ArticleItemHeader(props) {
   });
 
   const classnameForFullArticleBtnGroup = classNames({
-    userInfo: true,
+    articleItem__userInfo: true,
     isMyArticle,
   });
 
@@ -57,9 +57,9 @@ function ArticleItemHeader(props) {
       </div>
 
       <div className={classnameForFullArticleBtnGroup}>
-        <UserIcon className="articleItem__userInfo" item={item} />
+        <UserIcon className="articleItem__userinfo" item={item} />
         {total ? (
-          <div className="btnGroup">
+          <div className="articleItem__btnGroup">
             <Popconfirm
               title="Delete the task"
               description="Are you sure to delete this task?"
@@ -68,12 +68,12 @@ function ArticleItemHeader(props) {
               cancelText="No"
             >
               {' '}
-              <Button size="large" ghost danger className="delete">
+              <Button size="large" ghost danger className="articleItem__delete delete">
                 Delete
               </Button>
             </Popconfirm>
 
-            <Link to={`/articles/${item.slug}/edit`} className="edit" state={{ item }}>
+            <Link to={`/articles/${item.slug}/edit`} className="articleItem__edit edit" state={{ item }}>
               <span>Edit</span>
             </Link>
           </div>

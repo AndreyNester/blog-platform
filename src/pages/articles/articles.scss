@@ -1,12 +1,12 @@
 @import '../../commonStyles/varables.scss';
 
-.articlesList__container{
+.articlesList{
 
   display: flex;
   flex-direction: column;
   min-height: inherit;
 
-  .articlesList{
+  .articlesList__list{
     flex-grow: 1;
     
 
