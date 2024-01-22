@@ -19,7 +19,7 @@ function TagsFieldItem(props) {
         <Button type="primary" className="createArticle__deleteBtn" danger ghost onClick={() => remove(index)}>
           Delete
         </Button>
-        <Button type="primary" className="createArticle__AddTagBtn" ghost onClick={() => append()}>
+        <Button type="primary" className="createArticle__addTagBtn" ghost onClick={() => append()}>
           Add tag
         </Button>
       </label>

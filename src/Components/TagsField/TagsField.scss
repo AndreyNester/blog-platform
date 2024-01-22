@@ -18,14 +18,14 @@
         width: 120px;
         font-size: 16px;
       }
-      .createArticle__AddTagBtn {
+      .createArticle__addTagBtn {
         display: none;
       }
 
     }
 
     &:last-child{
-      .createArticle__AddTagBtn{
+      .createArticle__addTagBtn{
         display: block;
         height: 40px;
         width: 120px;
@@ -34,7 +34,7 @@
     }
   }
 }
-.createArticle__AddTagBtn{
+.createArticle__addTagBtn{
   height: 40px;
   width: 120px;
   font-size: 16px;

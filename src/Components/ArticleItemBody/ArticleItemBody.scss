@@ -1,6 +1,8 @@
 @import '../../commonStyles/varables.scss';
 
-.articleItemBody{
+// восстановление некоторых дефолтнх стилей для отображения разметки markdown
+
+.articleItem__body{
   overflow-wrap: anywhere;
   text-overflow: ellipsis; 
 

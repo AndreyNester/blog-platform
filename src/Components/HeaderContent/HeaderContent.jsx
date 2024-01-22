@@ -37,11 +37,11 @@ function HeaderContent() {
         </div>
       ) : (
         <div className="header__btnGroup">
-          <Link to="sign-in" className="header__signInBtn secondClassBtn">
+          <Link to="sign-in" className="header__signInBtn">
             Sign In
           </Link>
 
-          <Link to="sign-up" className="header__signUpBtn firstClassBtn" onClick={() => dispatch(actions.logOut())}>
+          <Link to="sign-up" className="header__signUpBtn" onClick={() => dispatch(actions.logOut())}>
             Sign Up
           </Link>
         </div>

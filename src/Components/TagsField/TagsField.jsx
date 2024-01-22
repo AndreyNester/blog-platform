@@ -30,7 +30,7 @@ function TagsField(props) {
       ))}
     </ul>
   ) : (
-    <Button type="primary" className="createArticle__AddTagBtn" ghost onClick={() => append({ tag: '' })}>
+    <Button type="primary" className="createArticle__addTagBtn" ghost onClick={() => append({ tag: '' })}>
       Add tag
     </Button>
   );

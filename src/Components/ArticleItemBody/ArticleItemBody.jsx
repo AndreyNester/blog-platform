@@ -7,7 +7,7 @@ function ArticleItemBody(props) {
     item: { body },
   } = props;
   return (
-    <div className="articleItemBody">
+    <div className="articleItem__body">
       <Markdown>{body}</Markdown>
     </div>
   );
