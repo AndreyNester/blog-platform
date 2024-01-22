@@ -1,6 +1,6 @@
 @import '../../commonStyles/varables.scss';
 
-.header__content{
+.header{
   background-color: inherit;
   display: flex;
   justify-content: space-between;
@@ -15,7 +15,7 @@
     }
   }
   
-  .layout__header-btnGroup {
+  .header__btnGroup {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -48,12 +48,12 @@
     }
   }
 
-  .layout__header-btnGroup_logined{
+  .header__btnGroup_logined{
     display: flex;
     align-items: center;
     gap: 20px;
     
-    .createArticleBtn{
+    .header__createArticleLink{
       position: relative;
       display: block;
       font-size: 14px;
@@ -82,7 +82,7 @@
       }
     }
 
-    .logOutBtn{
+    .header__logOutBtn{
       width: 109px;
       height: 51px;
       border: 1px solid rgba($color: #000000, $alpha: 0.5);

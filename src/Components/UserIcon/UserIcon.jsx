@@ -18,7 +18,7 @@ function UserIcon(props) {
 
   const classNamesOfUserIcon = classNames({
     userIcon: true,
-    [className]: true,
+    [className]: className,
   });
 
   return (

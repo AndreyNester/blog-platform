@@ -9,15 +9,15 @@ function HeaderContent() {
   const userData = useSelector((state) => state.reducers.logIn);
   const dispatch = useDispatch();
   return (
-    <div className="header__content">
-      <h1 className="layout__header-title">
-        <Link to="/" className="layout__header-title">
+    <header className="header">
+      <h1 className="header__title">
+        <Link to="/" className="header__link">
           Realworld Blog
         </Link>
       </h1>
       {userData.logined ? (
-        <div className="layout__header-btnGroup_logined">
-          <Link to="/new-article" className="createArticleBtn">
+        <div className="header__btnGroup_logined">
+          <Link to="/new-article" className="header__createArticleLink">
             <span>Create article</span>
           </Link>
           <Link to="/profile">
@@ -31,22 +31,22 @@ function HeaderContent() {
             />
           </Link>
 
-          <button type="button" className="logOutBtn" onClick={() => dispatch(actions.logOut())}>
+          <button type="button" className="header__logOutBtn" onClick={() => dispatch(actions.logOut())}>
             Log Out
           </button>
         </div>
       ) : (
-        <div className="layout__header-btnGroup">
-          <Link to="sign-in" className="secondClassBtn">
+        <div className="header__btnGroup">
+          <Link to="sign-in" className="header__signInBtn secondClassBtn">
             Sign In
           </Link>
 
-          <Link to="sign-up" className="firstClassBtn" onClick={() => dispatch(actions.logOut())}>
+          <Link to="sign-up" className="header__signUpBtn firstClassBtn" onClick={() => dispatch(actions.logOut())}>
             Sign Up
           </Link>
         </div>
       )}
-    </div>
+    </header>
   );
 }
 
